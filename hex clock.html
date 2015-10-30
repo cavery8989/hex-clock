@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+    <title>My hex clock</title>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet'    type='text/css'>
+        <style>
+       
+            html,body{height:100%;}
+            
+            
+            #hex{
+                font: 164px/164px 'Amatic SC', cursive;
+                text-align: center;
+                position: relative;
+                top:50%;
+                margin-top: -150px;
+                
+                
+            }
+        
+        </style>
+
+    </head>
+    
+
+    <body>
+        
+        <div id ="hex"></div>
+        
+        
+        
+        <script>
+        
+            var d,h,m,s,color, time;
+            
+            function displayTime(){
+                d = new Date();
+                h=d.getHours();
+                m=d.getMinutes();
+                s=d.getSeconds();
+                
+                if(h<=9)h="0"+h;
+                if(m<=9)m="0"+m;
+                if(s<=9)s="0"+s;
+                
+                color = "#"+h+m+s;
+                time = h+":"+m+":"+s;
+                
+                document.body.style.background = color;
+                
+                document.getElementById("hex").innerHTML=time;
+                
+                
+                
+                
+            }
+            
+            displayTime();
+            setInterval(displayTime,1000);
+            
+        
+        </script>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    </body>
+
+</html>
